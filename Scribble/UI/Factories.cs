@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using BeatSaberMarkupLanguage;
 using HMUI;
-using IPA.Utilities;
-using Scribble.Views;
 using UnityEngine;
 using VRUIControls;
 using Zenject;

@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using BeatSaberMarkupLanguage;
-using HMUI;
+﻿using HMUI;
 using IPA.Utilities;
 using Scribble.Views;
 using UnityEngine;
 using UnityEngine.UI;
-using VRUIControls;
 using Zenject;
 using Screen = HMUI.Screen;
 
@@ -17,10 +10,6 @@ namespace Scribble.UI
 {
     internal class ScribbleUI : MonoBehaviour, IInitializable
     {
-        public static Sprite BackgroundSprite =>
-            _backgroundSprite ??= Resources.FindObjectsOfTypeAll<Sprite>().FirstOrDefault(x => x.name == "Background");
-        private static Sprite _backgroundSprite;
-
         public MainViewController MainViewController;
 
         private Canvas _canvas;

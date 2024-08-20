@@ -23,7 +23,6 @@ namespace Scribble.Tools
             _brushDrawer = brushDrawer;
             _scribbleContainer = scribbleContainer;
             _saberType = saberType;
-
             _brushMaterial = _brushDrawer.Material;
         }
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using IPA.Config.Stores.Attributes;
 
 namespace Scribble

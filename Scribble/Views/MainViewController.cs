@@ -2,12 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using BeatSaberMarkupLanguage;
+using System.Linq;
 using BeatSaberMarkupLanguage.Attributes;
 using BeatSaberMarkupLanguage.Components;
 using BeatSaberMarkupLanguage.Components.Settings;
 using BeatSaberMarkupLanguage.Parser;
-using BeatSaberMarkupLanguage.Tags;
 using BeatSaberMarkupLanguage.ViewControllers;
 using HarmonyLib;
 using HMUI;
@@ -15,7 +14,6 @@ using IPA.Utilities;
 using Scribble.Effects;
 using Scribble.Stores;
 using Scribble.Tools;
-using Scribble.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -281,7 +279,7 @@ namespace Scribble.Views
             }
         }
 
-        protected override void DidDeactivate(bool removedFromHierarchy, bool screenSystemDisabling)
+        public override void DidDeactivate(bool removedFromHierarchy, bool screenSystemDisabling)
         {
             base.DidDeactivate(removedFromHierarchy, screenSystemDisabling);
             if (_scribbleContainer is {})
@@ -495,7 +493,7 @@ namespace Scribble.Views
             SelectedBackground.texture = null;
             SelectedBackground.color = MainViewController.ListCellColor;
 
-            ColorImage.texture = ScribbleUI.BackgroundSprite.texture;
+            ColorImage.texture = Resources.FindObjectsOfTypeAll<Sprite>().FirstOrDefault(x => x.name == "Background").texture;
             ColorImage.color = Brush.Color;
         }
 

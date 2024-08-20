@@ -37,7 +37,8 @@ namespace Scribble.Effects
         }
     }
     
-    [Effect("Light.shader")]
+    // Currently broken.
+    /*[Effect("Light.shader")]
     internal class Light2Effect : Effect
     {
         private const int Id = 1;
@@ -135,5 +136,5 @@ namespace Scribble.Effects
             LightEffectHelper.InitMaterial(mat, brush);
             return mat;
         }
-    }
+    }*/
 }

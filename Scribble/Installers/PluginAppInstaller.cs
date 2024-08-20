@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Linq;
-using IPA.Config;
-using IPA.Config.Stores;
 using IPA.Loader;
-using IPA.Logging;
 using Scribble.Stores;
-using SiraUtil;
 using Zenject;
 
 namespace Scribble.Installers

@@ -31,7 +31,6 @@ namespace Scribble
             _pluginConfig = pluginConfig;
             _mesh = primitiveMeshLoader.GetMesh(PrimitiveType.Plane);
             _material = assetLoader.LoadAsset<Material>(BrushMaterialName);
-            
             _material.SetFloat(Clip, 0.3589f);
             _material.SetColor(SecondaryColor, new Color(1,1,1,0.5f));
         }

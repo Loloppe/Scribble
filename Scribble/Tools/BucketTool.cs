@@ -1,5 +1,4 @@
-﻿using BeatSaberMarkupLanguage.GameplaySetup;
-using Scribble.Helpers;
+﻿using Scribble.Helpers;
 using UnityEngine;
 
 namespace Scribble.Tools
@@ -26,7 +25,6 @@ namespace Scribble.Tools
             _brushDrawer = brushDrawer;
             _container = scribbleContainer;
             _brushMaterial = brushDrawer.Material;
-
             ColorUtility.TryParseHtmlString("#ef42f5", out _brushColor);
         }
 

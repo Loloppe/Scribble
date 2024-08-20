@@ -1,5 +1,4 @@
 ﻿using Scribble.Stores;
-using UnityEngine;
 using Zenject;
 
 namespace Scribble.Installers

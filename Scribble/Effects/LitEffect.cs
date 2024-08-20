@@ -1,4 +1,5 @@
-using Scribble.Helpers;
+// Currently broken
+/*using Scribble.Helpers;
 using Scribble.Stores;
 using UnityEngine;
 
@@ -18,4 +19,4 @@ namespace Scribble.Effects
             return mat;
         }
     }
-}
+}*/

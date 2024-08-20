@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections;
-using BeatSaberMarkupLanguage.FloatingScreen;
-using HMUI;
+﻿using HMUI;
 using IPA.Utilities;
-using Polyglot;
+using BGLib.Polyglot;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
 namespace Scribble
 {

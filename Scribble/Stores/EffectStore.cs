@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using Scribble.Effects;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Scribble.Stores
 {

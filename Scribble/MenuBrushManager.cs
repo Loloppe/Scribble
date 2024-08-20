@@ -1,7 +1,5 @@
-﻿using System;
-using IPA.Utilities;
+﻿using IPA.Utilities;
 using VRUIControls;
-using Zenject;
 
 namespace Scribble
 {

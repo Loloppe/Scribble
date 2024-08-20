@@ -23,9 +23,7 @@ namespace Scribble.Tools
             _scribbleContainer = scribbleContainer;
             _saberType = saberType;
             _config = config;
-
             _brushMaterial = _brushDrawer.Material;
-
             ColorUtility.TryParseHtmlString("#429ef5", out _brushColor);
         }
 

@@ -1,5 +1,4 @@
 ﻿using Scribble.UI;
-using SiraUtil;
 using UnityEngine;
 using VRUIControls;
 using Zenject;

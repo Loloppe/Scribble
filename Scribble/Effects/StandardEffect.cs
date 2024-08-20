@@ -13,7 +13,6 @@ namespace Scribble.Effects
         public override Material CreateMaterial(CustomBrush brush)
         {
             var mat = base.CreateMaterial(brush);
-
             return mat;
         }
     }

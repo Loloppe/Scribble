@@ -1,10 +1,7 @@
 ﻿using System.Linq;
-using HMUI;
-using IPA.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using VRUIControls;
 
 namespace Scribble
 {

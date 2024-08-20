@@ -7,7 +7,6 @@ using Scribble.Installers;
 using Scribble.Stores;
 using Scribble.Tools;
 using SiraUtil.Logging;
-using SiraUtil.Tools;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using VRUIControls;
@@ -117,7 +116,7 @@ namespace Scribble
 
             SaberType = saberType;
             _pointer = pointer;
-            _pointerRenderer = _pointer.vrController.GetComponent<MeshRenderer>();
+            _pointerRenderer = _pointer.lastSelectedVrController.GetComponent<MeshRenderer>();
 
             _toolTypes ??= Assembly.GetExecutingAssembly().GetTypes().Where(x => typeof(ITool).IsAssignableFrom(x) && x!=typeof(ITool))
                 .ToList();

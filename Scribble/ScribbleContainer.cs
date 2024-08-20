@@ -3,12 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using HarmonyLib;
 using Scribble.Helpers;
-using Scribble.Installers;
 using Scribble.Stores;
 using SiraUtil.Logging;
-using SiraUtil.Tools;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -117,7 +114,6 @@ namespace Scribble
             else if (brush.TextureMode == CustomBrush.TextureModes.Tile)
                 lineRenderer.textureMode = LineTextureMode.Tile;
             lineRenderer.material = brush.CreateMaterial(_effects);
-
             _lineRenderers.Add(new LinerendererData(lineRenderer, (CustomBrush)brush.Copy()));
             return lineRenderer;
         }
@@ -510,7 +506,7 @@ namespace Scribble
 
         public void Dispose()
         {
-            DestroyImmediate(gameObject);
+            // DestroyImmediate(gameObject);
         }
 
         internal class LinerendererData

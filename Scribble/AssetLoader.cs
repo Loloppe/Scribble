@@ -31,7 +31,10 @@ namespace Scribble
 
         public void Dispose()
         {
-            _assetBundle.Unload(true);
+            if (_assetBundle)
+            {
+                _assetBundle.Unload(true);
+            }
         }
         
         private void LoadIfNotLoaded()

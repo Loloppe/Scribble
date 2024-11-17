@@ -256,7 +256,7 @@ namespace Scribble
         }
 
         private static readonly FieldAccessor<VRPointer, PointerEventData>.Accessor PointerEventDataAcc
-            = FieldAccessor<VRPointer, PointerEventData>.GetAccessor("_pointerData");
+            = FieldAccessor<VRPointer, PointerEventData>.GetAccessor("_currentPointerData");
 
         internal class Factory : PlaceholderFactory<GameObject, BrushBehaviour>{}
 

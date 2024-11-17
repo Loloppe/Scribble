@@ -506,7 +506,7 @@ namespace Scribble
 
         public void Dispose()
         {
-            DestroyImmediate(gameObject);
+            // DestroyImmediate(gameObject);
         }
 
         internal class LinerendererData

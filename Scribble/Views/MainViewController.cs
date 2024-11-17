@@ -142,11 +142,11 @@ namespace Scribble.Views
 
         private void FixTextEdit()
         {
-            //_newFileString.text.fontSize = 5f;
-            _newFileString.text.rectTransform.anchorMin = new Vector2(0, 0.5f);
-            _newFileString.text.rectTransform.anchorMax = new Vector2(0.6f, 0.5f);
-            _newFileString.text.rectTransform.sizeDelta = new Vector2(7, 30);
-            _newFileString.text.rectTransform.anchoredPosition = new Vector2(-4, 0);
+            //_newFileString.TextMesh.fontSize = 5f;
+            _newFileString.TextMesh.rectTransform.anchorMin = new Vector2(0, 0.5f);
+            _newFileString.TextMesh.rectTransform.anchorMax = new Vector2(0.6f, 0.5f);
+            _newFileString.TextMesh.rectTransform.sizeDelta = new Vector2(7, 30);
+            _newFileString.TextMesh.rectTransform.anchoredPosition = new Vector2(-4, 0);
         }
 
         [UIAction("save-new")]
@@ -179,11 +179,11 @@ namespace Scribble.Views
         IEnumerator CrShowLoadingModal(ModalView modal, CustomListTableData customListTableData)
         {
             UpdateFileList();
-            customListTableData.tableView.ReloadData();
+            customListTableData.TableView.ReloadData();
             modal.Show(false);
-            SetSkewForChildren(customListTableData.tableView.gameObject, 0);
+            SetSkewForChildren(customListTableData.TableView.gameObject, 0);
             yield return new WaitForSeconds(0.1f);
-            customListTableData.tableView.GetField<ScrollView, TableView>("_scrollView")._fixedCellSize = 23f;
+            customListTableData.TableView.GetField<ScrollView, TableView>("_scrollView")._fixedCellSize = 23f;
         }
 
         public void ShowLoadFile()
@@ -267,7 +267,7 @@ namespace Scribble.Views
             if (!_brushManager.ActiveBrush) return;
             var brush = _brushManager.GetCurrentBrush();
             brush.ColorString = "#" + ColorUtility.ToHtmlStringRGBA(color);
-            (_brushList.data[brush.Index] as UIBrushObject)?.ManualRefresh();
+            (_brushList.Data[brush.Index] as UIBrushObject)?.ManualRefresh();
         }
 
         protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
@@ -279,7 +279,7 @@ namespace Scribble.Views
             }
         }
 
-        public override void DidDeactivate(bool removedFromHierarchy, bool screenSystemDisabling)
+        protected override void DidDeactivate(bool removedFromHierarchy, bool screenSystemDisabling)
         {
             base.DidDeactivate(removedFromHierarchy, screenSystemDisabling);
             if (_scribbleContainer is {})
@@ -338,10 +338,10 @@ namespace Scribble.Views
                 SetModalPosition(modalGo.transform);
             }
 
-            SaveFileList.data = FileList;
-            LoadFileList.data = FileList;
+            SaveFileList.Data = FileList;
+            LoadFileList.Data = FileList;
 
-            SetModalPosition(_newFileString.modalKeyboard.modalView.transform);
+            SetModalPosition(_newFileString.ModalKeyboard.ModalView.transform);
 
             FixTextEdit();
 
@@ -381,32 +381,32 @@ namespace Scribble.Views
 
         public void SetupBrushes()
         {
-            _brushList.data.Clear();
+            _brushList.Data.Clear();
             foreach (var brush in _brushStoreStore.BrushList)
             {
                 Brushes.Add(new UIBrushObject(brush));
             }
-            _brushList.tableView.ReloadData();
+            _brushList.TableView.ReloadData();
         }
 
         public void SetupTextures()
         {
-            _texureList.data.Clear();
+            _texureList.Data.Clear();
             foreach (var texture in _textureStore.Textures)
             {
                 Textures.Add(new UITextureObject(texture));
             }
-            _texureList.tableView.ReloadData();
+            _texureList.TableView.ReloadData();
         }
 
         public void SetupEffects()
         {
-            _effectsList.data.Clear();
+            _effectsList.Data.Clear();
             foreach (var effect in _effectStore.EffectsList)
             {
                 Effects.Add(new UIEffectObjects(effect, _brushStoreStore));
             }
-            _effectsList.tableView.ReloadData();
+            _effectsList.TableView.ReloadData();
         }
 
         public void ActiveControllerChanged(BrushBehaviour brush)
@@ -414,8 +414,8 @@ namespace Scribble.Views
             int selectedBrush = _brushStoreStore.BrushList.FindIndex(br => br.Name == brush.CurrentBrush.Name);
             if (selectedBrush != -1)
             {
-                _brushList.tableView.ScrollToCellWithIdx(selectedBrush, TableView.ScrollPositionType.Beginning, false);
-                _brushList.tableView.SelectCellWithIdx(selectedBrush);
+                _brushList.TableView.ScrollToCellWithIdx(selectedBrush, TableView.ScrollPositionType.Beginning, false);
+                _brushList.TableView.SelectCellWithIdx(selectedBrush);
             }
 
             SelectForBrush(_brushStoreStore.BrushList[selectedBrush]);
@@ -426,15 +426,15 @@ namespace Scribble.Views
             int selectedTexture = _textureStore.Textures.FindIndex(tex => tex.Name == brush.TextureName);
             if (selectedTexture != -1)
             {
-                _texureList.tableView.ScrollToCellWithIdx(selectedTexture, TableView.ScrollPositionType.Beginning, false);
-                _texureList.tableView.SelectCellWithIdx(selectedTexture);
+                _texureList.TableView.ScrollToCellWithIdx(selectedTexture, TableView.ScrollPositionType.Beginning, false);
+                _texureList.TableView.SelectCellWithIdx(selectedTexture);
             }
 
             int selectedEffect = _effectStore.EffectsList.FindIndex(fx => fx.Name == brush.EffectName);
             if (selectedEffect != -1)
             {
-                _effectsList.tableView.ScrollToCellWithIdx(selectedEffect, TableView.ScrollPositionType.Beginning, false);
-                _effectsList.tableView.SelectCellWithIdx(selectedEffect);
+                _effectsList.TableView.ScrollToCellWithIdx(selectedEffect, TableView.ScrollPositionType.Beginning, false);
+                _effectsList.TableView.SelectCellWithIdx(selectedEffect);
             }
 
             _sizeSlider.ReceiveValue();

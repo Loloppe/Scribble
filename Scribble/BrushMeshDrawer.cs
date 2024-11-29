@@ -33,8 +33,6 @@ namespace Scribble
             _material = assetLoader.LoadAsset<Material>(BrushMaterialName);
             _material.SetFloat(Clip, 0.3589f);
             _material.SetColor(SecondaryColor, new Color(1,1,1,0.5f));
-            // MultiPass rendering need to be activated by the player for Scribble to display properly.
-            AssetBundleLoadingTools.Utilities.ShaderRepair.FixShaderOnMaterial(_material);
         }
 
         public void DrawMesh(Vector3 pos, Quaternion rotation, float scale, MaterialPropertyBlock propertyBlock)

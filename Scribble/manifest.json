@@ -2,15 +2,14 @@
   "$schema": "https://raw.githubusercontent.com/beat-saber-modding-group/BSIPA-MetadataFileSchema/master/Schema.json",
   "author": "Toni Macaroni",
   "description": "A Beat Saber mod that allows you to draw in the scene",
-  "gameVersion": "1.39.0",
+  "gameVersion": "1.39.1",
   "id": "Scribble",
   "name": "Scribble",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "dependsOn": {
     "BSIPA": "^4.3.5",
     "SiraUtil": "^3.1.12",
-    "BeatSaberMarkupLanguage": "^1.12.0",
-    "AssetBundleLoadingTools": "^1.1.9"
+    "BeatSaberMarkupLanguage": "^1.12.0"
   },
   "links": {
     "project-source": "https://github.com/ToniMacaroni/Scribble"

@@ -238,8 +238,7 @@ namespace Scribble
 
         private bool CheckForUI()
         {
-            var pointerData = PointerEventDataAcc(ref _pointer);
-            if (!(pointerData.pointerCurrentRaycast.gameObject is { } go)) return false;
+            if (!(_pointer._currentPointerData?.pointerCurrentRaycast.gameObject is { } go)) return false;
             return go.GetComponent<UIBehaviour>() is { };
         }
 
@@ -254,9 +253,6 @@ namespace Scribble
         {
             container.BindFactory<GameObject, BrushBehaviour, Factory>().FromFactory<CustomFactory>();
         }
-
-        private static readonly FieldAccessor<VRPointer, PointerEventData>.Accessor PointerEventDataAcc
-            = FieldAccessor<VRPointer, PointerEventData>.GetAccessor("_currentPointerData");
 
         internal class Factory : PlaceholderFactory<GameObject, BrushBehaviour>{}
 

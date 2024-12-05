@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using HMUI;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,27 +47,27 @@ namespace Scribble
             return imageComp;
         }
 
-        public static GameObject CreateFromInstance(this Transform parent, string name, bool worldPositionStays = false)
+        public static GameObject CreateFromInstance<T>(this Transform parent, string name, bool worldPositionStays = false) where T : Component
         {
-            GameObject go = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.name == name);
+            GameObject go = Object.FindObjectsOfType<T>(true).First(g => g.name == name).gameObject;
             return Object.Instantiate(go, parent, worldPositionStays);
         }
 
         public static ScribbleUISlider CreateSlider(this Transform parent)
         {
-            GameObject go = parent.CreateFromInstance("PositionX");
+            GameObject go = parent.CreateFromInstance<RangeValuesTextSlider>("PositionX");
             return new ScribbleUISlider(go);
         }
 
         public static ScribbleUISimpleButton CreateSimpleButton(this Transform parent, string text, ButtonColors? buttonColors = null)
         {
-            GameObject go = parent.CreateFromInstance("ApplyButton");
+            GameObject go = parent.CreateFromInstance<NoTransitionsButton>("ApplyButton");
             return new ScribbleUISimpleButton(go, text, buttonColors);
         }
 
         public static ScribbleUICheckbox CreateCheckbox(this Transform parent)
         {
-            GameObject go = parent.CreateFromInstance("Toggle");
+            GameObject go = parent.CreateFromInstance<Toggle>("Toggle");
             return new ScribbleUICheckbox(go);
         }
 

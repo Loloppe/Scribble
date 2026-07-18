@@ -40,7 +40,7 @@ namespace Scribble.Views
         [UIValue("effects")] protected readonly List<object> Effects = new List<object>();
 
         [UIComponent("SizeSlider")] private readonly GenericSliderSetting _sizeSlider = null;
-        [UIComponent("GlowSlider")] private readonly GenericSliderSetting _glowSlider = null;
+        // [UIComponent("GlowSlider")] private readonly GenericSliderSetting _glowSlider = null;
 
         [UIValue("brush-color-value")] private Color _brushColorValue = Color.white;
 
@@ -438,7 +438,7 @@ namespace Scribble.Views
             }
 
             _sizeSlider.ReceiveValue();
-            _glowSlider.ReceiveValue();
+            // _glowSlider.ReceiveValue();
 
             _brushColorValue = brush.Color;
         }

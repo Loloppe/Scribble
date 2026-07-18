@@ -25,8 +25,7 @@ namespace Scribble.Stores
         public void LoadTexturesFromResources()
         {
             AddTexture("standard", CommonHelpers.LoadTextureFromResources("Textures.standard.png", false));
-
-            AddTexture("pogchamp", CommonHelpers.LoadTextureFromResources("Textures.pogchamp.png"));
+            // AddTexture("pogchamp", CommonHelpers.LoadTextureFromResources("Textures.pogchamp.png"));
             AddTexture("brush", CommonHelpers.LoadTextureFromResources("Textures.brush.png"));
         }
 

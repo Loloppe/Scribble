@@ -121,7 +121,7 @@
   </horizontal>
   <vertical pad-top="2" child-expand-height="false" child-control-height="false" spacing="2" pad-left='40' pad-right='20'>
     <slider-setting id='SizeSlider' text='CurrentBrush Size' min='1' max='70' increment='1' integer-only='false' apply-on-change='true' value='Size' />
-    <slider-setting id='GlowSlider' text='Glow Amount' min='0' max='1' increment='0.05' integer-only='false' apply-on-change='true' value='Glow' />
+    <!-- <slider-setting id='GlowSlider' text='Glow Amount' min='0' max='1' increment='0.05' integer-only='false' apply-on-change='true' value='Glow' /> -->
     <button id='stop-animation-button' text='Stop Animation' on-click='stop-animation' tags='custom-button'
             ignore-layout='true'
             anchor-pos-x='110'
